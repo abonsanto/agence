@@ -11,7 +11,7 @@ scriptMain = {
     generateSelect: function(){
         $(scriptMain.campoSelect).select2({
             placeholder: 'Seleccionar usuarios',
-            width: 'resolve'
+             width: '82%'
         });
     },
 
@@ -59,7 +59,8 @@ scriptMain = {
                         if(data.estatus == 200){
                             $('#resultadoConsulta').html(data.html)
                         }else{
-                            scriptMain.sweetalert('Error!', 'Todos los campos son obligatorios', 'success')
+                            scriptMain.sweetalert('No se encontraron coincidencias', 'Intentelo con otra busqueda', 'error')
+                            $('#resultadoConsulta').html('')
                         }
                     }
                 });
@@ -92,8 +93,13 @@ scriptMain = {
                     data: {valores: valores},
                     dataType: 'json',
                     success: function (data) {
-                        $('#resultadoConsulta').html(data.html)
-                        scriptMain.generatePizza(data.data);
+                        if (data.estatus == 200) {
+                            $('#resultadoConsulta').html(data.html)
+                            scriptMain.generatePizza(data.data);
+                        }else{
+                            scriptMain.sweetalert('No se encontraron coincidencias', 'Intentelo con otra busqueda', 'error')
+                            $("canvas").hide()
+                        }
                     }
                 });
             }
@@ -145,8 +151,13 @@ scriptMain = {
                     data: {valores: valores},
                     dataType: 'json',
                     success: function (data) {
-                        $('#resultadoConsulta').html(data.html)
-                        scriptMain.generateGrafica(data);
+                        if (data.estatus == 200) {
+                            $('#resultadoConsulta').html(data.html)
+                            scriptMain.generateGrafica(data);
+                        }else{
+                            scriptMain.sweetalert('No se encontraron coincidencias', 'Intentelo con otra busqueda', 'error')
+                            $("canvas").hide()
+                        }
                     }
                 });
             }
@@ -182,6 +193,7 @@ scriptMain = {
             labels: label
             },
         });
+        $("canvas").show()
     },
 
     sweetalert: function(title, message, type){

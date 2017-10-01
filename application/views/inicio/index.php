@@ -5,7 +5,8 @@
                 <div class="row">
                     <form action="index_submit" method="get" accept-charset="utf-8">
                         <div class="col-md-4 form-group  text-center">
-                        <label for="consultUsua">Consultores</label>
+                        <label for="consultUsua">Consultores:</label>
+                        <br>
                             <select style="height: 30px" class="form-control listUsuario" name="nombres[]" multiple="multiple" id="consultUsua">
                                 <?php
                                 foreach ($result as $key => $value) {
@@ -15,10 +16,10 @@
                         </div>
                         <div class="col-md-4 form-group  text-center">
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-                                    <label for="iniDate">Fecha Inicio</label>
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                    <label for="iniDate">Fecha Inicio:</label>
                                     <input class="form-control text-center" id="iniDate" class="fechas">
-                                    <label for="endDate">Fecha Fin</label>
+                                    <label for="endDate">Fecha Fin:</label>
                                     <input class="form-control text-center" id="endDate" class="fechas">
                                 </div>
                             </div>
