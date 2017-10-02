@@ -63,7 +63,9 @@ class Consultores_model extends CI_Model {
     }
 
     public function orderFecha($usu){
+        $armado = array();
         foreach ($usu as $llave => $valor) {
+            $ordenado = array();
             foreach ($valor as $key => $value) {
                 $fecha = date_parse_from_format("Y-m-d",$value["data_emissao"]);
                 $mes = $this->meses($fecha["month"]);
