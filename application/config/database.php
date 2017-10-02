@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '172.17.0.3:3306',
+	'hostname' => 'bd-percona:3306',
 	'username' => 'root',
 	'password' => '12345',
 	'database' => 'examen',
