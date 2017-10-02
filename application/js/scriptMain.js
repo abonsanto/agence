@@ -182,7 +182,7 @@ scriptMain = {
             datasets: [{
                   label: 'Custo Fixo Médio',
                   data: promedio,
-                  borderColor:  'blue',
+                  borderColor:  '#00ffff',
                   type: 'line',
                   fill: false
                 },{
